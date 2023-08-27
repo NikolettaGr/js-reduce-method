@@ -50,3 +50,15 @@ console.log(totalExperience)
 
 
 // Grouping by a property, and totaling it too
+
+let groupByProfession = teamMembers.reduce((acc, curr) => {
+  let key = curr.profession;
+  if (!acc[key]) {
+    acc[key] = curr.yrsExperience;
+  } else {
+    acc[key] += curr.yrsExperience;
+  }
+  return acc
+}, {})
+
+console.log(groupByProfession)
